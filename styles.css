@@ -1,0 +1,230 @@
+@font-face {
+    font-family: "Merri";
+    src: url(Recursos/Merriweather/Merriweather-Black.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(Recursos/Roboto/Roboto-Black.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Balsamiq";
+    src: url(Recursos/Balsamiq_Sans/BalsamiqSans-Bold.ttf)
+}
+
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url(Recursos/1503.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed */
+    background-color: #C28F64;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+/*HEADER*/
+
+#header {
+    background-color: black;
+    width: 100%;
+    height: 17vw;
+    /*border-bottom: 1px solid white;*/
+}
+
+#header img {
+    float: left;
+    width: 17vw;
+    height: 17vw;
+    margin-left: 150px;
+}
+
+#header:hover img{
+    animation: fromRight 800ms linear;
+}
+
+
+
+#header h1 {
+    color: #C28F64;
+    font-size: 3.8vw;
+    padding-top: 50px;
+    padding-left: 10px;
+    text-align: center;
+    font-family: "Merri";
+}
+
+#header:hover h1{
+    animation: fromRight 800ms linear;
+}
+
+
+
+/* MENU DESPLEGBLE*/
+
+
+
+#nav{
+    font-family: "Merri";
+    display: flex;
+    position: relative;
+    
+}
+
+ul{
+    list-style: none;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    text-align: center;
+
+}
+
+
+
+.menu li a{
+    background-color: black;
+    color: bisque;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1vw;
+}
+
+.menu li a:hover{
+    background-color: #222121;
+}
+
+.menu > li:first-child a{
+    background-color: #222121;
+}
+
+.menu > li{
+    width: 100%;
+    font-size: 1vw;
+    /*border: 0.5px solid bisque;*/
+
+}
+
+.menu > li > ul > li{
+    min-width: 230px;
+    /*border: 0.5px solid bisque;*/
+
+}
+
+.menu li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.menu li:hover > ul{
+    display: block;
+    
+}
+
+
+/* CONTENIDO INICIO*/
+
+
+#article{
+    width: 80vw;
+    height: 80vw;
+    background-color: bisque;
+    margin: 80px auto;
+    margin-top: 100px;
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#article h2{
+    text-align: center;
+    font-size: 2vw;
+    font-family: "Merri";
+    padding-top: 70px;
+}
+
+#article img{
+    width:20vw;
+    height:20vw;
+    display: block;
+    float: right;
+    margin-right: 70px;
+    margin-top: 100px;
+    margin-left: 50px;
+    border: 2px solid black;
+}
+
+#article p{
+    width: 100%;
+    margin-top: 30px;
+    padding: 50px;
+    text-align: center;
+    text-align: justify;
+    line-height: 1.7vw;
+    font-size: 1.1vw;
+}
+
+
+
+/*FOOTER*/
+
+#footer{
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    border-top: 3px solid black;
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#footer #article2 #titol{
+    text-align: center;
+    padding: 40px;
+}
+
+#footer #article2 #patrocinadors{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#footer #autor{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+/* MEDIA QUERIS */
+
+@media(max-width:1050px){
+    #article h2{
+        padding-top: 30px;
+    }
+    #article p{
+        margin-top: 10px;
+        padding: 30px;
+    }
+}

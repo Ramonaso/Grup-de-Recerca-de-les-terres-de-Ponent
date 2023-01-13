@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Recursos/history.png" />
+    <title>Llibre blau</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        @font-face {
+            font-family: "Merri";
+            src: url(../Recursos/Merriweather/Merriweather-Black.ttf);
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            background-color: #C28F64;
+            
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+
+        /*HEADER*/
+
+        #header {
+            background-color: black;
+            width: 100%;
+            height: 17vw;
+
+            /*border-bottom: 1px solid white;*/
+        }
+
+        #header img {
+            float: left;
+            width: 17vw;
+            height: 17vw;
+            margin-left: 150px;
+        }
+
+        #header:hover img {
+            animation: fromRight 800ms linear;
+        }
+
+        #header h1 {
+            color: #C28F64;
+            font-size: 3.8vw;
+            padding-top: 50px;
+            padding-left: 10px;
+            text-align: center;
+            font-family: "Merri";
+        }
+
+        #header:hover h1 {
+            animation: fromRight 800ms linear;
+        }
+
+
+
+        /* MENU DESPLEGBLE*/
+
+
+
+        #nav {
+            font-family: "Merri";
+            display: flex;
+            position: relative;
+            z-index: 20;
+
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            text-align: center;
+
+        }
+
+
+
+        .menu li a {
+            background-color: black;
+            color: bisque;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-size: 1vw;
+        }
+
+        .menu li a:hover {
+            background-color: #222121;
+        }
+
+        .menu > li:nth-child(6) a{
+            background-color: #222121;
+
+        }
+
+        .menu > li:nth-child(6) > ul > li a{
+            background-color: black;
+        }
+
+        .menu > li:nth-child(6) > ul >li a:hover{
+            background-color: #222121;
+        }
+
+        .menu>li {
+            width: 100%;
+            font-size: 1vw;
+        }
+
+        .menu>li>ul>li {
+            min-width: 230px;
+
+        }
+
+        .menu li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        
+        }
+
+        .menu li:hover>ul {
+            display: block;
+
+        }
+
+        /*CONTENIDO */
+
+        #publicacions-llibreblau{
+            width: 500px;
+            height: 100px;
+            margin: 0px auto;
+            margin-top: 90px;
+            text-align: center;
+            padding: 25px;
+            background-color: black;
+            box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        #publicacions-llibreblau h1{
+            text-align: center;
+            color: #e5c6a1;
+            font-family: "Merri";
+            
+
+            
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 85%;
+            margin: 0px auto;
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        .card {
+            position: relative;
+            width: 320px;
+            height: 450px;
+            margin: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .img,
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFF;
+            transform: scaleX(0);
+            transition: transform .5s;
+            transform-origin: right;
+            transition-delay: 0.5s;
+        }
+
+        .card:hover .content::before {
+            transform: scaleX(1);
+            transform-origin: left;
+
+        }
+
+
+        .text {
+            z-index: 1;
+            padding: 30px;
+            transform: translateX(-300px);
+            transition: all .5s;
+        }
+
+        .card:hover .text {
+            transform: translateX(0);
+            transition-delay: .6s;
+        }
+
+        .text h3 {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /*FOOTER*/
+
+        #footer {
+            width: 100%;
+            background-color: black;
+            height: 6.5vw;
+        }
+
+        #footer p {
+            color: white;
+            text-align: center;
+            padding: 2vw;
+            font-family: "Merri";
+            font-size: 1.1vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--ENCABEZADO-->
+
+    <header id="header">
+        <img src="../Recursos/moneda_miro_bronze _t.gif" alt="moneda">
+        <h1>Grup de Recerques <br> de les terres de Ponent</h1>
+    </header>
+
+    <div class="clearfix">
+
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+
+    <nav id="nav">
+        <ul class="menu">
+            <li>
+                <a href="../index.html">INICI</a>
+            </li>
+            <li>
+                <a href="#">ACTUALITAT</a>
+                <ul>
+                    <li>
+                        <a href="#">Activitats</a>
+                    </li>
+                    <li>
+                        <a href="#">Publicacions</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">CAMPS DE TREBALL</a>
+                <ul>
+                    <li>
+                        <a href="#">Història</a>
+                    </li>
+                    <li>
+                        <a href="../Paleontologia/index.html">Paleontologia</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#">FOTOGRAFIES</a>
+                <ul>
+                    <li>
+                        <a href="#">Ponents d'Anglesola</a>
+                    </li>
+                    <li>
+                        <a href="#">Equip de simbologia de Verdú</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#">LLISTATS</a>
+                <ul>
+                    <li>
+                        <a href="#">Autors i treballs publicats</a>
+                    </li>
+                    <li>
+                        <a href="#">El grup en altres publicacions</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a>PUBLICACIONS</a>
+                <ul>
+                    <li>
+                        <a href="../Llibre blau/index.html">Sèrie blava</a>
+                    </li>
+                    <li>
+                        <a href="#">Sèrie Miscelània</a>
+                    </li>
+                    <li>
+                        <a href="#">Sèrie Monografies</a>
+                    </li>
+                    <li>
+                        <a href="#">Col·lecció Cum Laude</a>
+                    </li>
+                    <li>
+                        <a href="#">Adquisició i reserva</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">CONTACTE</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <!--CONTENIDO-->
+
+    <div id="publicacions-llibreblau">
+        <h1>PUBLICACIONS: Sèrie blava</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/arqueologia_arqueoloegs.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>ARQUEOLOGIA I ARQUEÒLEGS</h3>
+                    <p>El poblat ibèric dels estinclells de Verdú, Homenatge a ramon Boleda Cases.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/cultura_popular.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>CULTURA POPULAR</h3>
+                    <p>Món rural i tradicions als segles XIX i XX, Homenatge a Lluís Pons Serra.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/llibre_bandolers.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>BANDOLERISME, BANDOLERS i BANDOSITATS</h3>
+                    <p>A la Catalunya dels segles XV, XVI, XVIII i XIX.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/megalitisme_gravats.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>MEGALITISME, GRAVATS i CUPULIFORMES</h3>
+                    <p>L'imaginari de l'home prehistòric, Homenatge a Josep M. Miró Rosinach.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/modernisme_jujol.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>MODERNISME A L'URGELL I A LA SEGARRA</h3>
+                    <p>Jujol, artista cristià.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="Recursos/templers_hospitalers.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>TEMPLERS I HOSPITALETS</h3>
+                    <p>Ordes militars a Catalunya.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer id="footer">
+        <p>
+            AUTOR DEL LLOC WEB: &copy; Ramon Estadella Serra 2023
+        </p>
+    </footer>
+</body>
+
+</html>
